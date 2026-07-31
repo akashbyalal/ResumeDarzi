@@ -86,14 +86,30 @@ async function generateResumePdfController(req, res){
     })
   }
   const {resume, jobDescription, selfDescription} = interviewReport
-  const pdfBuffer = await generateResumePdf({resume, jobDescription, selfDescription})
+  try {
+  const pdfBuffer = await generateResumePdf({
+    resume,
+    jobDescription,
+    selfDescription,
+  });
+
+  if (!Buffer.isBuffer(pdfBuffer) || pdfBuffer.length === 0) {
+    throw new Error("Generated PDF is empty");
+  }
 
   res.set({
     "Content-Type": "application/pdf",
-    "Content-Disposition": `attachment; filename=resume_${interviewReportId}.pdf`
+    "Content-Disposition": `attachment; filename=resume_${interviewReportId}.pdf`,
+    "Content-Length": pdfBuffer.length,
+  });
 
-  })
-  res.send(pdfBuffer)
+  return res.status(200).send(pdfBuffer);
+} catch (error) {
+  console.error("PDF download failed:", error);
+  return res.status(500).json({
+    message: "Could not generate the resume PDF",
+  });
+}
 
 }
 
