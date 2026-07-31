@@ -10,7 +10,9 @@ app.use(cors({
   origin: [
     "http://localhost:5173",
     "http://localhost:5174",
-    "https://YOUR-FRONTEND-DOMAIN.netlify.app" // replace this
+    "http://127.0.0.1:5173",
+    "http://127.0.0.1:5174",
+    "https://resumedarzi-3.onrender.com"
   ],
   credentials: true
 }));
