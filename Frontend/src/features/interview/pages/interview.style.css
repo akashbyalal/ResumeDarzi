@@ -1,0 +1,452 @@
+.interview {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr) 280px;
+    background: #0f1117;
+    color: white;
+    overflow: hidden;
+}
+
+/* Left nav */
+
+.interview-nav {
+    border-right: 1px solid #2b2f3d;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 6px;
+    overflow-y: auto;
+}
+
+.interview-nav-label,
+.sidebar-label {
+    margin: 0 0 8px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #6b7280;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    border-left: 2px solid transparent;
+    background: transparent;
+    color: #9ca3af;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-icon {
+    flex-shrink: 0;
+}
+
+.nav-item:hover {
+    background: #161922;
+    color: #d1d5db;
+}
+
+.nav-item--active {
+    background: rgba(239, 68, 68, 0.1);
+    border-left-color: #ef4444;
+    color: #ef4444;
+}
+
+/* Center content */
+
+.interview-main {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+    min-height: 0;
+    min-width: 0;
+}
+
+.interview-main-header {
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    padding: 28px 40px 16px;
+    background: #0f1117;
+    border-bottom: 1px solid #2b2f3d;
+}
+
+.interview-main-body {
+    flex: 1 1 0;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.interview-main-body > .content-list,
+.interview-main-body > .roadmap,
+.interview-main-body > .skill-empty {
+    padding: 20px 40px 28px;
+}
+
+.interview-main-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.header-badge {
+    font-size: 12px;
+    color: #9ca3af;
+    background: #161922;
+    border: 1px solid #2b2f3d;
+    border-radius: 999px;
+    padding: 3px 10px;
+}
+
+.content-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Q&A accordion cards */
+
+.qa-card {
+    background: #161922;
+    border: 1px solid #2b2f3d;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.qa-question {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    background: transparent;
+    border: none;
+    color: white;
+    text-align: left;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 14px 16px;
+    cursor: pointer;
+}
+
+.qa-chevron {
+    flex-shrink: 0;
+    margin-top: 3px;
+    color: #6b7280;
+    transition: transform 0.15s ease;
+}
+
+.qa-chevron--open {
+    transform: rotate(180deg);
+    color: #ef4444;
+}
+
+.qa-body {
+    padding: 0 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px solid #2b2f3d;
+}
+
+.qa-body p {
+    margin: 12px 0 0;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #d1d5db;
+}
+
+.qa-tag {
+    display: block;
+    width: fit-content;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #9ca3af;
+    margin-bottom: 4px;
+}
+
+.qa-tag--answer {
+    color: #ef4444;
+}
+
+/* Roadmap timeline */
+
+.roadmap {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.roadmap-item {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 16px;
+    position: relative;
+    padding-bottom: 26px;
+}
+
+.roadmap-item:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 20px;
+    bottom: 0;
+    width: 1px;
+    background: #2b2f3d;
+}
+
+.roadmap-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #161922;
+    border: 2px solid #ef4444;
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.12);
+    margin-top: 2px;
+}
+
+.roadmap-content {
+    padding-top: 2px;
+}
+
+.roadmap-heading {
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+}
+
+.roadmap-day {
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 700;
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid #ef4444;
+    border-radius: 999px;
+    padding: 3px 10px;
+}
+
+.roadmap-tasks {
+    margin: 0;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #9ca3af;
+}
+
+/* Right sidebar */
+
+.interview-sidebar {
+    border-left: 1px solid #2b2f3d;
+    padding: 24px 16px;
+    overflow-y: auto;
+}
+
+.sidebar-label {
+    text-align: center;
+}
+
+.sidebar-label--gaps {
+    text-align: left;
+    margin-top: 28px;
+}
+
+/* Match score ring */
+
+.match-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.match-ring-wrap {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.match-ring-track {
+    stroke: #2b2f3d;
+}
+
+.match-ring-value {
+    transition: stroke-dashoffset 0.4s ease;
+}
+
+.match-ring--high .match-ring-value {
+    stroke: #22c55e;
+}
+
+.match-ring--medium .match-ring-value {
+    stroke: #f59e0b;
+}
+
+.match-ring--low .match-ring-value {
+    stroke: #ef4444;
+}
+
+.match-ring-label {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+}
+
+.match-ring-percent {
+    align-self: flex-end;
+    margin-bottom: 60px;
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.match-ring-value-text {
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+}
+
+.match-score-caption {
+    margin: 10px 0 0;
+    font-size: 12px;
+    color: #9ca3af;
+    text-align: center;
+    max-width: 160px;
+}
+
+/* Skill tags */
+
+.skill-tags {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.skill-tag {
+    border: 1px solid #3a3e4d;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #f3f4f6;
+    background: #1a1d26;
+}
+
+.skill-tag--high {
+    border-color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+    color: #fca5a5;
+}
+
+.skill-tag--medium {
+    border-color: #d97706;
+    background: rgba(217, 119, 6, 0.1);
+    color: #fcd34d;
+}
+
+.skill-tag--low {
+    border-color: #16a34a;
+    background: rgba(22, 163, 74, 0.1);
+    color: #86efac;
+}
+
+.skill-empty {
+    margin: 0;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+@media (max-width: 900px) {
+    .interview {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .interview-nav {
+        flex-direction: row;
+        overflow-x: auto;
+        border-right: none;
+        border-bottom: 1px solid #2b2f3d;
+    }
+
+    .interview-sidebar {
+        border-left: none;
+        border-top: 1px solid #2b2f3d;
+    }
+
+    .skill-tags {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+/* Scrollbar styling */
+.interview-main::-webkit-scrollbar,
+.interview-nav::-webkit-scrollbar,
+.interview-sidebar::-webkit-scrollbar {
+    width: 10px;
+}
+
+.interview-main::-webkit-scrollbar-track,
+.interview-nav::-webkit-scrollbar-track,
+.interview-sidebar::-webkit-scrollbar-track {
+    background: #0f1117;
+}
+
+.interview-main::-webkit-scrollbar-thumb,
+.interview-nav::-webkit-scrollbar-thumb,
+.interview-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(239, 68, 68, 0.35);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+.interview-main::-webkit-scrollbar-thumb:hover,
+.interview-nav::-webkit-scrollbar-thumb:hover,
+.interview-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(239, 68, 68, 0.6);
+}
+
+/* Firefox scrollbar styling */
+.interview-main,
+.interview-nav,
+.interview-sidebar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(239, 68, 68, 0.35) #0f1117;
+}

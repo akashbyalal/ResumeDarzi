@@ -1,0 +1,18 @@
+4 Layers:
+
+
+UI
+>> Component
+>> Pages
+
+Hook --> for managing State and side effects
+>> Hooks
+
+State --> data Store
+>> Auth.context.jsx
+>> Ai.context.jsx
+
+
+API  --> Communication with Backend
+>> Services
+    >> auth.api.js

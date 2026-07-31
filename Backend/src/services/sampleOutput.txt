@@ -1,0 +1,118 @@
+{
+  technicalQuestions: [
+    {
+      question: 'Explain the difference between useEffect and useLayoutEffect in React.',
+      intention: 'To test deep understanding of the React rendering lifecycle and browser painting.',
+      answer: 'useEffect runs asynchronously after the render is committed to the screen. useLayoutEffect runs synchronously after DOM mutations but before the browser paints, useful for measuring layout.'
+    },
+    {
+      question: 'How do you handle authentication in a MERN application using JWT?',
+      intention: 'To verify knowledge of secure session management and middleware.',
+      answer: 'Explain the flow: User logs in, server issues a signed JWT, client stores it (httpOnly cookie or local storage), and subsequent requests include it in the Authorization header. Middleware verifies the token signature on the backend.'
+    },
+    {
+      question: 'What is the benefit of using indexing in MongoDB and how does it impact performance?',
+      intention: 'To evaluate database optimization skills.',
+      answer: 'Indexing speeds up read operations by creating a data structure that allows the engine to find documents without scanning every single document (O(1) or O(log n) vs O(n)). Mention the trade-off of slower write performance.'
+    },
+    {
+      question: "Explain the concept of 'Hoisting' and 'Closures' in JavaScript.",
+      intention: 'To test fundamental knowledge of JS execution context.',
+      answer: 'Hoisting is JS moving declarations to the top of their scope. A closure is a function that remembers its outer scope even after the outer function has finished execution.'
+    },
+    {
+      question: 'How do you optimize a Node.js application that handles heavy CPU-bound tasks?',
+      intention: "To test knowledge of Node's single-threaded nature and performance scaling.",
+      answer: 'Discuss event loop blocking, the use of Worker Threads, or offloading tasks to microservices/message queues.'
+    },
+    {
+      question: 'What is the difference between SQL and NoSQL, and why would you choose MongoDB for a project?',
+      intention: 'To assess architectural decision-making.',
+      answer: 'SQL is relational/structured; NoSQL is flexible/document-based. MongoDB is chosen for rapid prototyping, handling unstructured data, and horizontal scalability.'
+    },
+    {
+      question: 'How do you handle API error responses in an Express.js application?',
+      intention: 'To see if the candidate understands global error handling.',
+      answer: 'Mention custom middleware error handlers (4 arguments), centralized error classes, and consistent JSON response structures.'
+    },
+    {
+      question: "How does React's Virtual DOM improve performance?",
+      intention: "To check understanding of React's reconciliation process.",
+      answer: 'Virtual DOM creates a lightweight representation of the UI; React compares current vs. new tree (diffing) and performs minimal actual DOM updates.'
+    },
+    {
+      question: 'What are the common strategies for state management in a large React application?',
+      intention: 'To evaluate knowledge of state propagation and complex UI management.',
+      answer: 'Mention Context API for simple/global needs and Redux or Zustand for complex, high-frequency state updates.'
+    },
+    {
+      question: 'What is a promise in JavaScript and how does async/await improve it?',
+      intention: 'To test asynchronous programming skills.',
+      answer: 'A promise is an object representing eventual completion of an async task. Async/await makes code look synchronous, improving readability and error handling via try/catch.'
+    }
+  ],
+  behavioralQuestions: [
+    {
+      question: 'Tell me about a time you faced a difficult technical challenge and how you solved it.',
+      intention: 'To assess problem-solving methodology.',
+      answer: 'Use the STAR method (Situation, Task, Action, Result). Focus on the debugging process and tools used.'
+    },
+    {
+      question: 'How do you handle feedback during code reviews?',
+      intention: 'To test coachability and communication.',
+      answer: 'Emphasize viewing feedback as a learning opportunity, remaining objective, and focusing on code quality rather than personal ego.'
+    },
+    {
+      question: 'How do you prioritize your tasks when you have multiple deadlines?',
+      intention: 'To check organizational and project management skills.',
+      answer: 'Discuss techniques like the Eisenhower Matrix or simple impact/effort analysis to manage time effectively.'
+    },
+    {
+      question: 'Describe a time you had a conflict with a team member.',
+      intention: 'To gauge conflict resolution skills.',
+      answer: 'Focus on listening, maintaining professionalism, and finding a solution that benefits the project goals.'
+    },
+    {
+      question: 'Why do you want to work for TechNova Solutions?',
+      intention: 'To see if they have researched the company.',
+      answer: "Connect the company's tech stack and industry presence with your own career goals."
+    },
+    {
+      question: 'How do you stay updated with new technologies?',
+      intention: 'To test curiosity and commitment to growth.',
+      answer: 'Mention blogs, newsletters, side projects, or active participation in developer communities.'
+    },
+    {
+      question: 'Tell me about a time you made a mistake. What did you learn?',
+      intention: 'To assess self-awareness and accountability.',
+      answer: 'Pick a real mistake, focus on the lesson learned, and how it improved your future workflow.'
+    },
+    {
+      question: 'What is the biggest challenge you expect as a junior developer?',
+      intention: 'To test realistic expectations.',
+      answer: 'Mentioning the learning curve of large codebases or balancing speed with quality shows maturity.'
+    }
+  ],
+  skillGaps: [
+    { skill: 'TypeScript', severity: 'medium' },
+    { skill: 'Unit Testing (Jest)', severity: 'high' },
+    { skill: 'Docker', severity: 'medium' },
+    { skill: 'System Design', severity: 'high' }
+  ],
+  preparationPlan: [
+    { day: 1, focus: 'JavaScript Deep Dive', tasks: [Array] },
+    { day: 2, focus: 'React Core', tasks: [Array] },
+    { day: 3, focus: 'Node/Express', tasks: [Array] },
+    { day: 4, focus: 'MongoDB/Database', tasks: [Array] },
+    { day: 5, focus: 'Testing Fundamentals', tasks: [Array] },
+    { day: 6, focus: 'TypeScript Basics', tasks: [Array] },
+    { day: 7, focus: 'System Design', tasks: [Array] },
+    { day: 8, focus: 'Docker Basics', tasks: [Array] },
+    { day: 9, focus: 'DSA Refresher', tasks: [Array] },
+    { day: 10, focus: 'Behavioral Prep', tasks: [Array] },
+    { day: 11, focus: 'Project Polish', tasks: [Array] },
+    { day: 12, focus: 'Mock Interview', tasks: [Array] },
+    { day: 13, focus: 'Technical Review', tasks: [Array] },
+    { day: 14, focus: 'Rest and Final Prep', tasks: [Array] }
+  ]
+}
