@@ -214,7 +214,7 @@ async function generatePdfFromHtml(htmlContent) {
   });
   await browser.close();
 
-  return pdfBuffer;
+  return Buffer.from(pdfBuffer);;
 }
 
 async function generateResumePdf({ resume, selfDescription, jobDescription }) {
