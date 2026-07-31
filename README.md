@@ -1,6 +1,13 @@
 # ResumeDarzi
 
 ResumeDarzi is an AI-powered interview preparation platform that tailors your resume to match your target job. Simply upload your current resume, provide the job description and a brief self description, and ResumeDarzi generates a personalized interview report with technical and behavioral questions, skill gap analysis, a preparation roadmap, and an AI-tailored resume to help you stand out.
+
+## 🌐 Live Demo
+
+**Try ResumeDarzi:** https://resumedarzi-3.onrender.com/
+
+> Note: The application is hosted on Render's free tier. The first request may take 30 to 60 seconds while the backend wakes up.
+
 ## ✨ Features
 
 - User Registration & Login
