@@ -7,14 +7,13 @@ const app = express();
 app.use(express.json());
 app.use(cookies());
 app.use(cors({
-    origin: [
-        "http://localhost:5173",
-        "http://localhost:5174",
-        "http://127.0.0.1:5173",
-        "http://127.0.0.1:5174"
-    ],
-    credentials: true
-}))
+  origin: [
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "https://YOUR-FRONTEND-DOMAIN.netlify.app" // replace this
+  ],
+  credentials: true
+}));
 
 /** Require all the Routes here */
 const authRouter = require("./routes/auth.routes");
