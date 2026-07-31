@@ -4,7 +4,7 @@ import { useAuth } from "../hooks/useAuth";
 
 import "./auth.style.css";
 
-const Register = () => {
+const register = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState("")
   const [email, setEmail] = useState("")
@@ -81,4 +81,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default register;
